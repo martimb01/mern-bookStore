@@ -18,10 +18,8 @@ app.use(express.json());
 //CORS middleware
 app.use(cors())
 
-
 //Setting up routers
 app.use('/books', bookRouter)
-
 
 //Setting port and Initializing server
 const PORT = process.env.PORT || 5000
