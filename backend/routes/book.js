@@ -82,4 +82,21 @@ router.post('/', async (req,res) => {
     }
 })
 
+//Route for deleting book 
+router.delete('/:id', async (req,res) => {
+    
+    try {
+        const bookDelete = await Book.findByIdAndDelete(req.params.id);
+    if(bookDelete) {
+        console.log("Book's been deleted!")
+        res.status(200).send({message: "Book has been deleted!"})
+    }
+    res.status(404).send({message: 'Error deleting that book'})
+        } catch (err) {
+            console.log(err.message)
+            res.status(500).send(err.message)
+        }
+
+})
+
 module.exports = router;
