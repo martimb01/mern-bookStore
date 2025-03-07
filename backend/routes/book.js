@@ -34,6 +34,28 @@ router.get ('/:id', async (req,res) => {
     }
 })
 
+//Route to update book by id
+router.put('/:id', async (req,res) => {
+    try{
+        if(!req.body.title || !req.body.author || !req.body.publishYear) {
+            console.log('Not all fields completed!')
+            return res.status(400).send({message: "All field required!"})
+        }
+
+        const updatedBook = {
+            title: req.body.title,
+            author: req.body.author,
+            publishYear: req.body.publishYear
+        }
+        await Book.findByIdAndUpdate(req.params.id, updatedBook)
+        console.log('Book updated!')
+        res.status(200).send({message: "Book updated!"})
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send({message:err.message})
+    }
+})
+
 //Route for saving new Book
 router.post('/', async (req,res) => {
     try {
