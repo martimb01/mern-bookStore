@@ -5,22 +5,22 @@ const mongoose = require('mongoose')
 const connectToDB = require('./db.js')
 const Book = require('./models/bookModel.js')
 dotenv.config(); //Loading env variables
+//Importing routers
+const bookRouter = require('./routes/book.js')
 
+//Starting express app
 const app = express();
 
-//Route for saving new Book
-app.post('/books', async (req,res) => {
-    try {
-
-    } catch (err) {
-        console.log(err.message);
-        res.status(500).send({message: err.message})
-    }
-})
+//Middleware for parsing request body
+app.use(express.json());
 
 
 
+//Setting up routers
+app.use('/books', bookRouter)
 
+
+//Setting port and Initializing server
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
     connectToDB()
