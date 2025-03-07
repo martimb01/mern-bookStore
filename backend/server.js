@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose')
 const connectToDB = require('./db.js')
 const Book = require('./models/bookModel.js')
+const cors = require('cors')
 dotenv.config(); //Loading env variables
 //Importing routers
 const bookRouter = require('./routes/book.js')
@@ -14,6 +15,8 @@ const app = express();
 //Middleware for parsing request body
 app.use(express.json());
 
+//CORS middleware
+app.use(cors())
 
 
 //Setting up routers
