@@ -2,12 +2,12 @@
 This is a full-stack web app to display different books and their details.
 The purpose of this project was primarily to learn how to use TailWind CSS
 
-[Demo](https://youtu.be/2YicpTSrueo)
+[Demo](https://youtu.be/kXcE8TjhPuo)
 
 ## Features
 - Create and edit books
 - Browse books
--  Somewhat responsive design
+-  Responsive design
 
 ## Technologies Used
 
