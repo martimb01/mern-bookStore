@@ -83,8 +83,10 @@ const deleteBookById = async (req,res) => {
     if(bookDelete) {
         console.log("Book's been deleted!")
         res.status(200).send({message: "Book has been deleted!"})
+    } else {
+        return res.status(404).send({ message: 'Error deleting that book' });
     }
-    res.status(404).send({message: 'Error deleting that book'})
+    
         } catch (err) {
             console.log(err.message)
             res.status(500).send(err.message)

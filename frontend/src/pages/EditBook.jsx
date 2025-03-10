@@ -82,7 +82,7 @@ const EditBook =() => {
                     />
                 </div>
                 <button className='p-2 bg-sky-300 m-8' onClick={handleEditBook}>
-                    Save
+                    Submit
                 </button>
             </div>
         </div>
