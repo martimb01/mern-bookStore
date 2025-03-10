@@ -11,7 +11,7 @@ import BooksTable from '../components/home/BooksTable';
 const Home =  () => {
     const [books, setBooks] = useState([])
     const [loading, setLoading] = useState(false)
-    const [showType, setShowType] = useState('table')
+    const [showType, setShowType] = useState('card')
     useEffect(() => {
         setLoading(true)
         axios
@@ -44,7 +44,7 @@ const Home =  () => {
 
             </div>
             <div className='flex justify-between items-center'>
-                <h1 className='text-3x1 my-8'>Books List</h1>
+                <h1 className='text-5xl my-8 text-center w-full'>Books List</h1>
                 <Link to='/books/create'>
                 <MdOutlineAddBox className='text-sky-800 text-4xl' />
                 </Link>
