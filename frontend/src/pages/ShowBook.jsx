@@ -44,7 +44,6 @@ const ShowBook =() => {
                     <span className='text-x1 mr-4 text-gray-500'>Publish Year</span>
                     <span>{book.publishYear}</span>
                 </div>
-
             </div>
             }
         </div>
