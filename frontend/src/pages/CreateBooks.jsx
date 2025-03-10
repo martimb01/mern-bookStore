@@ -13,9 +13,9 @@ const CreateBook =() => {
     const navigate = useNavigate();
     const handleSaveBook = () => {
         const newBook = {
-            title,
-            author,
-            publishYear
+            title: title,
+            author: author,
+            publishYear: publishYear
         }
         setLoading(true)
         axios.post('http://localhost:3000/books', newBook)
